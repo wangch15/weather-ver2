@@ -1,0 +1,203 @@
+@import 'var';
+@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC';
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgc;
+}
+
+.nav{
+    width: 100%;
+    height: $nav-height;
+    background-color: $card-bgc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    opacity: 0.99;
+    box-shadow: 0 0 10px $bgc;
+    z-index: 10;
+
+    ul{ width: 100%;
+        max-width: 1440px;
+        display: flex;
+        list-style: none;
+        padding: 0 20px;
+        li{ 
+            width: 60px;
+            height: 30px;
+            margin-right: 20px;
+            
+
+            .btn{
+                width: 100%;
+                height: 100%;
+                border: none;
+                background-color: transparent;
+                color: $font-color-1;
+                font-size: 14px;
+                cursor: pointer;
+                &:hover{
+                    color: $font-color-2;
+                }
+            }
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    min-height: calc(100vh - $nav-height);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: start;
+    margin-top: $nav-height;
+}
+
+.taiwan-map-area{
+    width: 40%;
+    height: calc(100vh - $nav-height - 30px);
+
+    //fixed只能以整個視窗為參考位置來定位
+    //若有需求可以寫js來改變right的值
+    position: fixed;
+    right: 20px;
+    top: calc($nav-height + 30px);
+    .map{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+            height: 95%;
+            path{
+                //stroke代表路徑的線框顏色
+                stroke:  $card-bgc;
+                fill: transparent;
+                transition: 0.3s;
+                cursor: pointer;
+                &:hover{
+                    fill: #376266!important;
+                    transform: translate(-3px,-3px);
+                }
+            }
+        }
+    }
+}
+.weather-card-area{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-content: start;
+}
+
+
+.weather-card{
+    width: calc(50% - 20px);
+    max-height: 170px;
+    margin:0 20px 20px 0;
+    padding: 20px 20px;
+    background-color: $card-bgc;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    .card-top{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        .img-area{
+            img{
+                width: 80px;
+                height: 80px;
+            }
+        }
+        .info-area{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: end;
+            .temp{
+                font-size: 40px;
+                color: $font-color-2;
+                font-weight: 400;
+                display: flex;
+                justify-items: end;
+                margin-bottom: 5px;
+            }
+            span{
+                font-size: 14px;
+                color: $font-color-1;
+                .fi-bs-marker{
+                    font-size: 14px;
+                    color: $font-color-1;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .card-bottom{
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-top: 1px solid $font-color-1;
+        padding: 10px 0 0;
+        span{
+            font-size: 14px;
+            color: $font-color-1;
+            display: flex;
+            align-items: center;
+            padding: 0px 5px;
+            .fi {
+                font-size: 15px;
+                color: $choose-color;
+                margin-right: 5px;
+            }
+        }
+    }
+
+}
+
+.pathcolor{
+    fill: #70C5CC !important;
+}
+
+.pathnorth{
+    fill: #75a2aa !important;
+}
+.pathcenter{
+    fill: #70C5CC !important;
+}
+.pathsouth{
+    fill: #6399a8 !important;
+}
+.patheast{
+    fill: #75b1b1 !important;
+}
+.pathisland{
+    fill: #6d9ba1 !important;
+}
+
+.pathcolorclean{
+    fill: transparent !important;
+}
