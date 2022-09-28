@@ -16,13 +16,12 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--light-bgc,$bgc);
-    
 }
 
 .nav {
     width: 100%;
     height: $nav-height;
-    background-color: var(--light-card-bgc,$card-bgc);
+    background-color: var(--light-card-bgc , $card-bgc);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -8,10 +8,6 @@
   --light-color-white:white;
 }
 
-.bg2 {
-  background-image: url("./img/sunbg.jpg") !important;
-}
-
 * {
   margin: 0;
   padding: 0;
