@@ -170,3 +170,10 @@ path.forEach(pathEach => {
 
     }
 })
+
+const webModeBtn = document.querySelector('.web-mode-btn')
+
+webModeBtn.onclick = function () {
+    document.body.classList.toggle('light-mode')
+    console.log(document.body);
+}
