@@ -86,6 +86,12 @@ body{
         align-items: center;
         svg{
             height: 95%;
+            g{
+                &:hover path{
+                    fill: #376266!important;
+                    transform: translate(-3px,-3px);
+                }
+            }
             path{
                 //stroke代表路徑的線框顏色
                 stroke:  $card-bgc;
