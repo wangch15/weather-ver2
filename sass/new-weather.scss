@@ -1,64 +1,89 @@
-@import 'var';
-@import url('https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css');
+@import "var";
+@import url("https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css");
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans TC';
+    font-family: "Noto Sans TC";
 }
 
-body{
+body {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $bgc;
+    background-color: var(--light-bgc,$bgc);
 }
 
-.nav{
+.nav {
     width: 100%;
     height: $nav-height;
-    background-color: $card-bgc;
+    background-color: var(--light-card-bgc , $card-bgc);
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     top: 0;
-    opacity: 0.99;
-    box-shadow: 0 0 10px $bgc;
+    opacity: 0.95;
+    box-shadow: 0 0 10px var(--light-bgc,$bgc);
     z-index: 10;
-
-    ul{ width: 100%;
+    .nav-area{
+        width: 100%;
         max-width: 1440px;
         display: flex;
-        list-style: none;
+        justify-content: space-between;
+        // background-color: red;
         padding: 0 20px;
-        li{ 
-            width: 60px;
-            height: 30px;
-            margin-right: 20px;
-            
+        .web-mode-btn{
+            border: none;
+            width: 30px;
+            border-radius: 15px;
+            background-color: var(--light-font-color-1,$font-color-1);
+            cursor: pointer;
+            &:hover {
+                background-color: var(--light-font-color-2,$font-color-2);
+            }
+            .fa-solid{
+                color: var(--light-color-white,$font-color-2);
+                font-size: 16px;
+            }
+            &:hover .fa-solid{
+                color: var(--light-color-white,$font-color-1);
+                font-size: 16px;
+            }
 
-            .btn{
-                width: 100%;
-                height: 100%;
-                border: none;
-                background-color: transparent;
-                color: $font-color-1;
-                font-size: 14px;
-                cursor: pointer;
-                &:hover{
-                    color: $font-color-2;
+
+
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            li {
+                width: 60px;
+                height: 30px;
+                margin-right: 20px;
+
+                .btn {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background-color: transparent;
+                    color: var(--light-font-color-1,$font-color-1);
+                    font-size: 14px;
+                    cursor: pointer;
+                    &:hover {
+                        color: var(--light-font-color-2,$font-color-2);
+                    }
                 }
             }
         }
     }
 }
 
-.container{
+.container {
     width: 100%;
     max-width: 1440px;
     height: 100%;
@@ -69,7 +94,7 @@ body{
     margin-top: $nav-height;
 }
 
-.taiwan-map-area{
+.taiwan-map-area {
     width: 40%;
     height: calc(100vh - $nav-height - 30px);
 
@@ -78,14 +103,15 @@ body{
     position: fixed;
     right: 20px;
     top: calc($nav-height + 30px);
-    .map{
+    .map {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        svg{
+        svg {
             height: 95%;
+<<<<<<< HEAD
             g{
                 &:hover path{
                     fill: #376266!important;
@@ -93,20 +119,23 @@ body{
                 }
             }
             path{
+=======
+            path {
+>>>>>>> 3c4f4623dbdf8dc7106f3f5b7f93e7f664e9011f
                 //stroke代表路徑的線框顏色
-                stroke:  $card-bgc;
+                stroke: var(--light-font-color-2,$card-bgc);
                 fill: transparent;
                 transition: 0.3s;
                 cursor: pointer;
-                &:hover{
-                    fill: #376266!important;
-                    transform: translate(-3px,-3px);
+                &:hover {
+                    fill: #376266 !important;
+                    transform: translate(-3px, -3px);
                 }
             }
         }
     }
 }
-.weather-card-area{
+.weather-card-area {
     width: 60%;
     height: 100%;
     display: flex;
@@ -115,95 +144,93 @@ body{
     align-content: start;
 }
 
-
-.weather-card{
+.weather-card {
     width: calc(50% - 20px);
     max-height: 170px;
-    margin:0 20px 20px 0;
+    margin: 0 20px 20px 0;
     padding: 20px 20px;
-    background-color: $card-bgc;
+    background-color: var(--light-card-bgc,$card-bgc);
     border-radius: 3px;
     display: flex;
     flex-direction: column;
-    .card-top{
+    .card-top {
         width: 100%;
         height: 100px;
         display: flex;
-        .img-area{
-            img{
+        .img-area {
+            img {
                 width: 80px;
                 height: 80px;
             }
         }
-        .info-area{
+        .info-area {
             display: flex;
             flex: 1;
             flex-direction: column;
             align-items: end;
-            .temp{
+            .temp {
                 font-size: 40px;
-                color: $font-color-2;
+                color: var(--light-font-color-2,$font-color-2);
                 font-weight: 400;
                 display: flex;
                 justify-items: end;
                 margin-bottom: 5px;
             }
-            span{
+            span {
                 font-size: 14px;
-                color: $font-color-1;
-                .fi-bs-marker{
+                color: var(--light-font-color-1,$font-color-1);
+                .fi-bs-marker {
                     font-size: 14px;
-                    color: $font-color-1;
+                    color: var(--light-font-color-1,$font-color-1);
                     margin-right: 5px;
                 }
             }
         }
     }
 
-    .card-bottom{
+    .card-bottom {
         width: 100%;
         height: 30px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        border-top: 1px solid $font-color-1;
+        border-top: 1px solid var(--light-font-color-1,$font-color-1);
         padding: 10px 0 0;
-        span{
+        span {
             font-size: 14px;
-            color: $font-color-1;
+            color: var(--light-font-color-1,$font-color-1);
             display: flex;
             align-items: center;
             padding: 0px 5px;
             .fi {
                 font-size: 15px;
-                color: $choose-color;
+                color: var(--light-choose-color,$choose-color);
                 margin-right: 5px;
             }
         }
     }
-
 }
 
-.pathcolor{
-    fill: #70C5CC !important;
+.pathcolor {
+    fill: #70c5cc !important;
 }
 
-.pathnorth{
+.pathnorth {
     fill: #75a2aa !important;
 }
-.pathcenter{
-    fill: #70C5CC !important;
+.pathcenter {
+    fill: #70c5cc !important;
 }
-.pathsouth{
+.pathsouth {
     fill: #6399a8 !important;
 }
-.patheast{
+.patheast {
     fill: #75b1b1 !important;
 }
-.pathisland{
+.pathisland {
     fill: #6d9ba1 !important;
 }
 
-.pathcolorclean{
+.pathcolorclean {
     fill: transparent !important;
 }

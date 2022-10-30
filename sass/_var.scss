@@ -14,3 +14,15 @@ $nav-height:50px;
 $font-color-1:#8C8F94;
 
 $font-color-2:white;
+
+//日間模式顏色設置
+.light-mode{
+    // --light-bgc:rgb(223, 223, 223);
+    // --light-card-bgc:rgb(185, 185, 185);
+    --light-card-bgc:rgb(220, 220, 220);
+    --light-bgc:rgb(200, 200, 200);
+    --light-font-color-1:#22252A;
+    --light-font-color-2:rgb(105, 109, 115);
+    --light-choose-color:#2a8361;
+    --light-color-white:white;
+}

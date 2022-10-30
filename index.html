@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Weather Web</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC">
     <link rel="stylesheet" href="./css/new-weather.css">
 </head>
-
-<body>
+<body >
     <header class="nav">
-        <ul>
-            <li><button class="btn" onclick="filter2('all')">全臺地區</button></li>
-            <li><button class="btn" onclick="filter2(north)">北部地區</button></li>
-            <li><button class="btn" onclick="filter2(center)">中部地區</button></li>
-            <li><button class="btn" onclick="filter2(south)">南部地區</button></li>
-            <li><button class="btn" onclick="filter2(east)">東部地區</button></li>
-            <li><button class="btn" onclick="filter2(island)">福建地區</button></li>
-        </ul>
+        <nav class="nav-area">
+            <ul>
+                <li><button class="btn" onclick="filter2('all')">全臺地區</button></li>
+                <li><button class="btn" onclick="filter2(north)">北部地區</button></li>
+                <li><button class="btn" onclick="filter2(center)">中部地區</button></li>
+                <li><button class="btn" onclick="filter2(south)">南部地區</button></li>
+                <li><button class="btn" onclick="filter2(east)">東部地區</button></li>
+                <li><button class="btn" onclick="filter2(island)">福建地區</button></li>
+            </ul>
+            <button class="web-mode-btn"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        </nav>
     </header>
     <main class="container">
         <div class="weather-card-area">
@@ -232,7 +235,7 @@
         </div>
     </main>
 
-    <script src="./new-weather-colors.js"></script>
+    <script src="./js/new-weather-colors.js"></script>
 </body>
 
 </html>

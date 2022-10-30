@@ -1,4 +1,13 @@
 @import url("https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css");
+.light-mode {
+  --light-card-bgc:rgb(220, 220, 220);
+  --light-bgc:rgb(200, 200, 200);
+  --light-font-color-1:#22252A;
+  --light-font-color-2:rgb(105, 109, 115);
+  --light-choose-color:#2a8361;
+  --light-color-white:white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,45 +22,67 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #22252A;
+  background-color: var(--light-bgc, #22252A);
 }
 
 .nav {
   width: 100%;
   height: 50px;
-  background-color: #333742;
+  background-color: var(--light-card-bgc, #333742);
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: 0;
-  opacity: 0.99;
-  box-shadow: 0 0 10px #22252A;
+  opacity: 0.95;
+  box-shadow: 0 0 10px var(--light-bgc, #22252A);
   z-index: 10;
 }
-.nav ul {
+.nav .nav-area {
   width: 100%;
   max-width: 1440px;
   display: flex;
-  list-style: none;
+  justify-content: space-between;
   padding: 0 20px;
 }
-.nav ul li {
+.nav .nav-area .web-mode-btn {
+  border: none;
+  width: 30px;
+  border-radius: 15px;
+  background-color: var(--light-font-color-1, #8C8F94);
+  cursor: pointer;
+}
+.nav .nav-area .web-mode-btn:hover {
+  background-color: var(--light-font-color-2, white);
+}
+.nav .nav-area .web-mode-btn .fa-solid {
+  color: var(--light-color-white, white);
+  font-size: 16px;
+}
+.nav .nav-area .web-mode-btn:hover .fa-solid {
+  color: var(--light-color-white, #8C8F94);
+  font-size: 16px;
+}
+.nav .nav-area ul {
+  list-style: none;
+  display: flex;
+}
+.nav .nav-area ul li {
   width: 60px;
   height: 30px;
   margin-right: 20px;
 }
-.nav ul li .btn {
+.nav .nav-area ul li .btn {
   width: 100%;
   height: 100%;
   border: none;
   background-color: transparent;
-  color: #8C8F94;
+  color: var(--light-font-color-1, #8C8F94);
   font-size: 14px;
   cursor: pointer;
 }
-.nav ul li .btn:hover {
-  color: white;
+.nav .nav-area ul li .btn:hover {
+  color: var(--light-font-color-2, white);
 }
 
 .container {
@@ -83,7 +114,7 @@ body {
   height: 95%;
 }
 .taiwan-map-area .map svg path {
-  stroke: #333742;
+  stroke: var(--light-font-color-2, #333742);
   fill: transparent;
   transition: 0.3s;
   cursor: pointer;
@@ -107,7 +138,7 @@ body {
   max-height: 170px;
   margin: 0 20px 20px 0;
   padding: 20px 20px;
-  background-color: #333742;
+  background-color: var(--light-card-bgc, #333742);
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -129,7 +160,7 @@ body {
 }
 .weather-card .card-top .info-area .temp {
   font-size: 40px;
-  color: white;
+  color: var(--light-font-color-2, white);
   font-weight: 400;
   display: flex;
   justify-items: end;
@@ -137,11 +168,11 @@ body {
 }
 .weather-card .card-top .info-area span {
   font-size: 14px;
-  color: #8C8F94;
+  color: var(--light-font-color-1, #8C8F94);
 }
 .weather-card .card-top .info-area span .fi-bs-marker {
   font-size: 14px;
-  color: #8C8F94;
+  color: var(--light-font-color-1, #8C8F94);
   margin-right: 5px;
 }
 .weather-card .card-bottom {
@@ -150,24 +181,24 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border-top: 1px solid #8C8F94;
+  border-top: 1px solid var(--light-font-color-1, #8C8F94);
   padding: 10px 0 0;
 }
 .weather-card .card-bottom span {
   font-size: 14px;
-  color: #8C8F94;
+  color: var(--light-font-color-1, #8C8F94);
   display: flex;
   align-items: center;
   padding: 0px 5px;
 }
 .weather-card .card-bottom span .fi {
   font-size: 15px;
-  color: #26ECA1;
+  color: var(--light-choose-color, #26ECA1);
   margin-right: 5px;
 }
 
 .pathcolor {
-  fill: #70C5CC !important;
+  fill: #70c5cc !important;
 }
 
 .pathnorth {
@@ -175,7 +206,7 @@ body {
 }
 
 .pathcenter {
-  fill: #70C5CC !important;
+  fill: #70c5cc !important;
 }
 
 .pathsouth {
